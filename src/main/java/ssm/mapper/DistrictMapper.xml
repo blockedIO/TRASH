@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.mapper.DistrictMapper">
+<delete id="deleteManyDistrict">
+    delete from district where id in
+    <foreach collection="array" item="ids" open="(" close=")" separator=",">
+        #{ids}
+    </foreach>
+</delete>
+</mapper>
