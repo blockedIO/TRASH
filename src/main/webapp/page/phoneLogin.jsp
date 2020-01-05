@@ -16,7 +16,7 @@
     <DIV class=dialog>
         <DIV class=box>
             <H4>用户登录</H4>
-            <FORM id=user method=post name=user action="#">
+            <FORM id=user method=post name=user action="signWithPhone">
                 <DIV class=infos>
                     <TABLE class=field>
                         <TBODY>
@@ -29,7 +29,7 @@
                                 <span id="counting"></span></TD></TR>
                         <TR>
                             <TD class=field>密　　码：</TD>
-                            <TD><INPUT id=user_password class=text type=password name=password> </TD>
+                            <TD><INPUT class=text type=password name=password> </TD>
                         </TR>
                         </TBODY>
                     </TABLE>

@@ -49,4 +49,9 @@ public class UserController {
         session.setAttribute("code",999999);
         return "{\"result\":"+1+"}";
     }
+
+    @RequestMapping("signWithPhone")
+    public String signWithPhone(String phoneNum,String password){
+        return "redirect:getHouseByUser?page=1";
+    }
 }
