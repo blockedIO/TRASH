@@ -41,4 +41,12 @@ public class UserController {
         model.addAttribute("status","0");
         return "login";
     }
+
+    @RequestMapping("getVerifyCode")
+    @ResponseBody
+    public String getVerifyCode(String phoneNum, HttpSession session){
+        //将验证码发到手机，并存入session
+        session.setAttribute("code",999999);
+        return "{\"result\":"+1+"}";
+    }
 }
