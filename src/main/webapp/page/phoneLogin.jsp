@@ -15,7 +15,7 @@
 <DIV id=regLogin class=wrap>
     <DIV class=dialog>
         <DIV class=box>
-            <H4>用户登录</H4>
+            <H4>手机登录</H4>
             <FORM id=user method=post name=user action="signWithPhone">
                 <DIV class=infos>
                     <TABLE class=field>
@@ -28,9 +28,8 @@
                                 <input id="getCode" type="button" value="获取验证码">
                                 <span id="counting"></span></TD></TR>
                         <TR>
-                            <TD class=field>密　　码：</TD>
-                            <TD><INPUT class=text type=password name=password> </TD>
-                        </TR>
+                            <TD class=field>验 证 码：</TD>
+                            <TD><INPUT class="text" type="text" name="verifycode"></TD></TR>
                         </TBODY>
                     </TABLE>
                     <DIV class=buttons> <INPUT value=登陆 type=submit name="sum1">

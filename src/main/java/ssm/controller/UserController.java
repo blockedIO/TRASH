@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ssm.pojo.User;
 import ssm.service.SignService;
 import ssm.util.MD5Utils;
+import ssm.util.SmsUtil;
 
 import javax.servlet.http.HttpSession;
 
@@ -46,12 +47,20 @@ public class UserController {
     @ResponseBody
     public String getVerifyCode(String phoneNum, HttpSession session){
         //将验证码发到手机，并存入session
-        session.setAttribute("code",999999);
+        int code = 100000 + (int)(Math.random()*899999);
+        String message = "你的验证码是"+ code+ "。用完请删除...";
+        //SmsUtil.sendMsg(message, phoneNum);
+        session.setAttribute("code", 999999+"");//测试的验证码999999
         return "{\"result\":"+1+"}";
     }
 
     @RequestMapping("signWithPhone")
-    public String signWithPhone(String phoneNum,String password){
-        return "redirect:getHouseByUser?page=1";
+    public String signWithPhone(String verifycode,HttpSession session){
+        String code = (String)session.getAttribute("code");
+        if(verifycode.equals(code)){
+            return "login";
+        }else{
+            return "phoneLogin";
+        }
     }
 }
